@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM crpi-hdoi26uk0jhh8oxv.cn-shenzhen.personal.cr.aliyuncs.com/fund_tlx/node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # 生产镜像
-FROM nginx:alpine
+FROM crpi-hdoi26uk0jhh8oxv.cn-shenzhen.personal.cr.aliyuncs.com/fund_tlx/nginx:alpine
 
 # 复制构建产物
 COPY --from=builder /app/dist /usr/share/nginx/html

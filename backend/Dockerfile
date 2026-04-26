@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM crpi-hdoi26uk0jhh8oxv.cn-shenzhen.personal.cr.aliyuncs.com/fund_tlx/python:3.13-slim
 
 WORKDIR /app
 

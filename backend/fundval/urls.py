@@ -19,7 +19,16 @@ from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.views.static import serve
+from django.http import JsonResponse
 import os
+
+
+def youdatong_login(request):
+    return JsonResponse({
+        "data": {},
+        "errmsg": "success",
+        "errno": 200,
+    })
 
 def serve_frontend(request, path=''):
     """服务前端静态文件"""
@@ -35,6 +44,7 @@ def serve_frontend(request, path=''):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('youdatong/login', youdatong_login, name='youdatong_login'),
     path('api/', include('api.urls')),
 
     # 前端路由（catch-all，必须放在最后）

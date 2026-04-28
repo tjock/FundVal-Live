@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y \
 # 复制依赖文件
 COPY requirements.txt .
 
-# 安装 Python 依赖
-RUN pip install --no-cache-dir -r requirements.txt
+# 安装 Python 依赖（使用阿里云 PyPI 镜像）
+RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com -r requirements.txt
 
 # 复制项目文件
 COPY . .
